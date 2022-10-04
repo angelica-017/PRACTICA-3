@@ -1,0 +1,38 @@
+!
+!   GAMESS Calculation input file
+!   Molecula de prueba AYG
+!
+ $CONTRL SCFTYP=RHF MAXIT=200 RUNTYP=OPTIMIZE
+         COORD=UNIQUE MULT=1 
+         ICHARG=0  
+         DFTTYP=B3LYP
+         MOLPLT=.FALSE. PLTORB=.FALSE.  $END
+ $SYSTEM TIMLIM=2879 MWORDS=250  $END
+
+ $FORCE METHOD=SEMINUM NVIB=2 $END 
+ $STATPT OPTTOL=0.0005 NSTEP=999 $END
+ $STATPT IHREP=0 HSSEND=.TRUE.  $END
+
+ $DFT    METHOD=GRID  NLEB=590  $END
+
+ $BASIS  GBASIS=N31 NGAUSS=6
+         NDFUNC=1   NPFUNC=0  $END
+
+ $SCF    DIRSCF=.T. $END
+ $GUESS  GUESS=HUCKEL  $END
+
+ $DATA
+   Molecula de prueba AYG
+  C1
+O     8.0    -0.72340     1.26122     0.13240
+C     6.0    -0.89785     0.06467    -0.03452
+C     6.0     0.20377    -0.93263    -0.08006
+C     6.0     1.48489    -0.55098    -0.03257
+H     1.0    -1.90752    -0.36366    -0.16576
+H     1.0    -0.08068    -1.97654    -0.15787
+H     1.0     1.76303     0.49864     0.04128
+H     1.0     2.28994    -1.27988    -0.06688
+ $END
+
+
+! Customizations after this line are persisted when using Do More Calculations
